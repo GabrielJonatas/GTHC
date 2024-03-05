@@ -3,7 +3,7 @@ package programas;
 public class CalculadoraDoomsDay {
 
 	public static void main(String[] args) {
-			CalculadoraDoomsDay.RetornaDiaDaData(3,1,0);
+			CalculadoraDoomsDay.RetornaDiaDaData(5,3,2024);
 	}
 	
 	// Programa principal que calcula o dia da semana referente a data
@@ -129,12 +129,12 @@ public class CalculadoraDoomsDay {
 		
 		if(ano<0) return true;
 		
-		if(mes>12||mes<0) return true;
+		if(mes>12||mes<1) return true;
 		
 		if(meses[mes-1] > 31) {
 			int bissexto;
 			
-			if(ano%4 == 0) {
+			if((ano % 4 == 0) && (ano % 100 != 0) || (ano % 400 == 0)) {
 				bissexto = 29;
 			} else {
 				bissexto = 28;
